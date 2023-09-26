@@ -9,7 +9,7 @@ services:
     privileged: true
     cap_add:
       - IPC_LOCK
-    command: vault server -config=/vault/config/vault.hcl
+    command: vault server -config=/vault/config/vault-server.hcl
     volumes:
       - ./vault-server.hcl:/vault/config/vault-server.hcl
       - vault-data:/vault/data
