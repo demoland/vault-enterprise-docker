@@ -3,7 +3,7 @@ services:
   vault-enterprise:
     image: hashicorp/vault-enterprise:latest
     environment:
-      VAULT_LICENSE: ${VAULT_LICENSE_CI}
+      VAULT_LICENSE_PATH: /vault/config/vault.hclic 
     ports:
       - 8200:8200
     privileged: true
@@ -15,3 +15,6 @@ services:
       - type: bind
         source: ./vault-data
         target: /vault/data
+      - type: bind
+        source: ./vault.hclic
+        target: /vault/config/vault.hclic
