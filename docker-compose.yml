@@ -12,6 +12,6 @@ services:
     command: vault server -config=/vault/config/vault-server.hcl
     volumes:
       - ./vault-server.hcl:/vault/config/vault-server.hcl
-      - ./vault-data:/vault/data
+      - ./vault-data:/vault/file
 volumes:
   vault-data:
