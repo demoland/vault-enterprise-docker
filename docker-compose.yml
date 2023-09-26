@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  vault-enterprise:
+    image: hashicorp/vault-enterprise:latest
+    environment:
+      VAULT_LICENSE: ${VAULT_LICENSE_CI}
+    ports:
+      - 8200:8200
+    privileged: true
+volumes:
+  vault-data:
