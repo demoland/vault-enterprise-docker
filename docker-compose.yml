@@ -7,5 +7,9 @@ services:
     ports:
       - 8200:8200
     privileged: true
-volumes:
-  vault-data:
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/vault/config/vault.hcl
+    volumes:
+      - ./vault-server.hcl:/vault/config/vault-server.hcl
+      - vault-data:/vault/data
