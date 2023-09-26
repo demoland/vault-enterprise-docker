@@ -13,3 +13,5 @@ services:
     volumes:
       - ./vault-server.hcl:/vault/config/vault-server.hcl
       - vault-data:/vault/data
+volumes:
+  vault-data:
