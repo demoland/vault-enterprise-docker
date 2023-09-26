@@ -15,8 +15,8 @@ listener "tcp" {
 }
 
 telemetry {
-  statsite_address = "127.0.0.1:8125"
-  disable_hostname = true
+  prometheus_retention_time = "30s",
+  disable_hostname          = true
 }
 
 disable_mlock = true
